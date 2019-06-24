@@ -23,14 +23,14 @@ resource "aws_security_group" "sample_ec2" {
   }
 }
 
-resource "aws_eip" "sample_ec2_1" {
-  instance = "${aws_instance.sample_ec2_1.id}"
+resource "aws_eip" "sample_ec2" {
+  instance = "${aws_instance.sample_ec2.id}"
   vpc      = true
 }
 
-resource "aws_instance" "sample_ec2_1" {
+resource "aws_instance" "sample_ec2" {
   ami               = "${var.amazon_linux}"
-  availability_zone = "ap-southeast-1a"
+  availability_zone = "${var.az_1}"
   instance_type     = "t2.nano"
   key_name          = "${var.dev_keyname}"
 
@@ -39,10 +39,10 @@ resource "aws_instance" "sample_ec2_1" {
     "${aws_default_security_group.dev_default.id}",
   ]
 
-  subnet_id                   = "${aws_subnet.public_1a.id}"
+  subnet_id                   = "${aws_subnet.public_subnet_1.id}"
   associate_public_ip_address = true
 
   tags = {
-    Name = "sample_ec2-1a"
+    Name = "sample_ec2"
   }
 }

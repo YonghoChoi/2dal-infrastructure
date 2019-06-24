@@ -12,12 +12,12 @@ resource "aws_route_table" "dev_public" {
   }
 }
 
-resource "aws_route_table_association" "dev_public_1a" {
-  subnet_id      = "${aws_subnet.public_1a.id}"
+resource "aws_route_table_association" "dev_public_1" {
+  subnet_id      = "${aws_subnet.public_subnet_1.id}"
   route_table_id = "${aws_route_table.dev_public.id}"
 }
 
-resource "aws_route_table_association" "dev_public_1c" {
-  subnet_id      = "${aws_subnet.public_1c.id}"
+resource "aws_route_table_association" "dev_public_2" {
+  subnet_id      = "${aws_subnet.public_subnet_2.id}"
   route_table_id = "${aws_route_table.dev_public.id}"
 }

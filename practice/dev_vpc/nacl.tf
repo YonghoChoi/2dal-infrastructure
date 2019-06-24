@@ -20,8 +20,8 @@ resource "aws_default_network_acl" "dev_default" {
   }
 
   subnet_ids = [
-    "${aws_subnet.public_1a.id}",
-    "${aws_subnet.public_1c.id}",
+    "${aws_subnet.public_subnet_1.id}",
+    "${aws_subnet.public_subnet_2.id}",
   ]
 
   tags = {
