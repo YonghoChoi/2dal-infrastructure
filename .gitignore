@@ -1,4 +1,3 @@
-iam/
 .direnv
 .envrc
 tmp/
@@ -7,3 +6,4 @@ tmp/
 terraform.tfstate
 terraform.tfstate.backup
 .terraform.tfstate.lock.info
+planfile
