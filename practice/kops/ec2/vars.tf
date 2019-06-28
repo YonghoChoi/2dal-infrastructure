@@ -1,14 +1,11 @@
-variable "amazon_linux_ami" {}
-variable "ubuntu_ami" {}
 variable "region" {}
+variable "vpc" {}
 variable "subnet_1" {}
 variable "subnet_2" {}
 variable "az_1" {}
 variable "az_2" {}
-
-variable "vpc" {
-  default = "vpc-75032a12"
-}
+variable "amazon_linux_ami" {}
+variable "ubuntu_ami" {}
 
 variable "k8s_cluster_name" {
   default = "irene.k8s.local"
