@@ -21,7 +21,7 @@ resource "aws_security_group_rule" "kops_ssh" {
   from_port         = 22
   to_port           = 22
   protocol          = "TCP"
-  cidr_blocks       = ["119.206.206.251/32"]
+  cidr_blocks       = ["${var.vpn_ip}"]
   security_group_id = "${aws_security_group.kops.id}"
 
   lifecycle { create_before_destroy = true }

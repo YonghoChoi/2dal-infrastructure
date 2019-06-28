@@ -22,9 +22,9 @@ EOF
   }
 }
 
-# 인스턴스 프로파일은 IAM 역할을 위한 컨테이너로서 인스턴스 시작 시 EC2 인스턴스에 역할 정보를 전달하는 데 사용됨
-# EC2 인스턴스는 가상화된 리소스이기 때문에 권한을 부여하기 위해 임시 자격 증명이 필요한데 이를 수행해주는 것이 인스턴스 프로파일
-# instance profile은 콘솔에서 제거할 수 없다. awscli를 사용하여 제거한다. (aws iam delete-instance-profile --instance-profile-name kops_profile)
+# Instance profiles are containers for IAM roles and are used to assign roles to instances of EC2 at instance startup.
+# Since the EC2 instance is a virtualized resource, it needs temporary credentials to grant permissions, which is the instance profile.
+# The instance profile can not be removed from the console. Use awscli to remove it. (aws iam delete-instance-profile --instance-profile-name kops_profile)
 resource "aws_iam_instance_profile" "kops_profile" {
   name = "kops_profile"
   role = "${aws_iam_role.kops_role.name}"

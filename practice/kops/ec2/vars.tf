@@ -10,14 +10,6 @@ variable "vpc" {
   default = "vpc-75032a12"
 }
 
-variable "key_pair" {
-  default = "yongho1037"
-}
-
-variable "private_key_path" {
-  default = "E:/private/aws_key-pair/yongho1037-southeast-1.pem"
-}
-
 variable "k8s_cluster_name" {
   default = "irene.k8s.local"
 }
@@ -78,4 +70,9 @@ variable "networking" {
 }
 variable "cloud-labels" {
    default = "Owner=yongho1037"
+}
+
+variable "ec2_passwd_prameter_name" {
+   default = "kops-ubuntu-password"
+   description = "Parameter name of AWS Parameter Store"
 }
